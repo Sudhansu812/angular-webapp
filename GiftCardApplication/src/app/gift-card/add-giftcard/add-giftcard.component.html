@@ -1,0 +1,148 @@
+
+<div style="overFlow:auto" class="container">
+    <div class="border p-4 mt-4">
+        <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        
+            <!--Employee Name-->
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Gift Card Amount</span>
+                </div>
+        
+                <input required type="number" class="form-control" name="amount" #amount="ngModel"
+                    [(ngModel)]="service.formData.amount">
+            </div>
+        
+            <!--Employee Name-->
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Recipient Name</span>
+                </div>
+        
+                <input required minlength="2" type="text" class="form-control" name="recipientName" #recipientName="ngModel"
+                    [(ngModel)]="service.formData.recipientName">
+            </div>
+        
+            <!--Employee Name-->
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Gender</span>
+                </div>
+                <input required type="radio" class="form-control" name="gender" #gender="ngModel" [(ngModel)]="service.formData.gender"
+                    value="Male">Male
+                <input required type="radio" class="form-control" name="gender" #gender="ngModel" [(ngModel)]="service.formData.gender"
+                    value="Female">Female
+            </div>
+        
+            <!--Employee Department-->
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Occasion</span>
+                </div>
+        
+                <select required class="form-control" name="occasion" #occasion="ngModel"
+                    [(ngModel)]="service.formData.occasion">
+                    <option *ngFor="let dl of listItems" [value]="dl">
+                        {{dl}}
+                    </option>
+                </select>
+            </div>
+
+            <fieldset>
+                <legend style="color:black;size:10px;">Shipping Address</legend>
+                <div class="container border" id="addr">
+                    <!--Employee Name-->
+                    <div class="m-3 input-group">
+                    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Street Address</span>
+                        </div>
+                    
+                        <input required minlength="2" type="text" class="form-control" name="streetAddress" #streetAddress="ngModel"
+                            [(ngModel)]="service.formData.streetAddress">
+                    </div>
+                    <div class="m-3 input-group">
+                    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">City</span>
+                        </div>
+                    
+                        <input required minlength="2" type="text" class="form-control" name="city" #city="ngModel"
+                            [(ngModel)]="service.formData.city">
+                    </div>
+                    <div class="m-3 input-group">
+                    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">State</span>
+                        </div>
+                    
+                        <input required minlength="2" type="text" class="form-control" name="state" #state="ngModel"
+                            [(ngModel)]="service.formData.state">
+                    </div>
+                    <div class="m-3 input-group">
+                    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Country</span>
+                        </div>
+                    
+                        <input required minlength="2" type="text" class="form-control" name="country" #country="ngModel"
+                            [(ngModel)]="service.formData.country">
+                    </div>
+                    <div class="m-3 input-group">
+                    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Pin Code</span>
+                        </div>
+                    
+                        <input required minlength="2" type="text" class="form-control" name="pinCode" #pinCode="ngModel"
+                            [(ngModel)]="service.formData.pinCode">
+                    </div>
+                </div>
+            </fieldset>
+        
+            <!--Employee Name-->
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Buyer's Name</span>
+                </div>
+        
+                <input required minlength="2" type="text" class="form-control" name="buyerName" #buyerName="ngModel"
+                    [(ngModel)]="service.formData.buyerName">
+            </div>
+        
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone Number</span>
+                </div>
+        
+                <input required minlength="2" type="text" class="form-control" name="phone" #phone="ngModel"
+                    [(ngModel)]="service.formData.phone">
+            </div>
+        
+            <div class="m-3 input-group">
+        
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email ID</span>
+                </div>
+        
+                <input required minlength="2" type="email" class="form-control" name="email" #email="ngModel"
+                    [(ngModel)]="service.formData.email">
+            </div>
+        
+            <!-- <div class="text-left text-danger" *ngIf="employeeName.invalid && employeeName.touched">
+                    Please enter employee name
+                </div> -->
+        
+            <button class="m-3" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+                Place Order
+            </button>
+        
+        </form>
+    </div>
+</div>

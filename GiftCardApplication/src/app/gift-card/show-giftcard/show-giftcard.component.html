@@ -1,0 +1,53 @@
+
+<div style="overFlow:auto">
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="listData" matSort>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+
+            <!-- <ng-container matColumnDef="Options">
+                <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="onEdit(row, row.employeeId)">
+                        <mat-icon>launch</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="onDelete(row.employeeId)">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container> -->
+
+            <ng-container matColumnDef="giftCardId">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>S.No</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.giftCardId}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="buyerName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Buyer Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.buyerName}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="shippingAddress">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Shipping Address</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.shippingAddress}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="city">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="amount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Amount</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.amount}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.phone}}</mat-cell>
+            </ng-container>
+
+        </mat-table>
+    </div>
+</div>

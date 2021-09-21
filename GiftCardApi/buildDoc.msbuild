@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<BuildDir>Build Test</BuildDir>
+	</PropertyGroup>
+	<PropertyGroup>
+		
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectsToBuild Include="**\*.csproj" /> <!-- here we can exclude by using Exclude = "**\App.csproj /> after Include -->
+		<FilesToDelete Include="**\*.pdb" /> <!-- here we can also use other files as well like .pid instead of .config -->
+	</ItemGroup>
+	<Target Name="DeleteFiles">
+		<Message Text="Testing if this worked successfully: $(BuildDir) -- DeleteFiles Target"></Message>
+		<Delete Files="@(FilesToDelete)" />
+	</Target>
+	<Target Name="Build">
+		<Message Text="Testing if this worked successfully: $(BuildDir) -- Build Target"></Message>
+		<!--<MSBuild Projects="C:\Users\KIIT\source\repos\GiftCardApi\GiftCardApi\GiftCardApi.csproj"></MSBuild>-->
+		<MSBuild Projects="@(ProjectsToBuild)" />
+	</Target>
+</Project>
+	
