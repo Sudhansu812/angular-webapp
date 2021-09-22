@@ -51,10 +51,7 @@ namespace GiftCardApi.Services
             {
                 throw new NoDataAvailableException("NO data available");
             }
-            //for (int i = 0; i < giftCards.Count; i++) {
-            //    giftCards[i].ShippingAddress = giftCards[i].StreetAddress + " " + giftCards[i].City + " " + giftCards[i].State +
-            //        " " + giftCards[i].Country + " PIN CODE:" + giftCards[i].PinCode;
-            //}
+
             return _mapper.Map<IEnumerable<GiftCardReadDto>>(giftCards);
         }
     }
